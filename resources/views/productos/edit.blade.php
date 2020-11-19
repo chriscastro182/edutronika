@@ -12,7 +12,7 @@
         </div>
         <div class="col-md-6">
             <div class="product">                
-                {!! Form::model($product, ['route' => ['productos.update', $product->id],
+                {!! Form::model($Producto, ['route' => ['productos.update', $Producto->id],
                 'method' => 'PUT', 'files' => true]) !!}
 
                     @include('productos.partials.formU')

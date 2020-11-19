@@ -8,32 +8,32 @@
                 <a href="{{ route('productos.index') }}">
                     <button type="button" class="btn btn-default"><b><i class="fa fa-angle-left fa-2x"></i></b> Volver <span class="badge badge-primary"></span></button>
                 </a>
-                <a href="{{ route('productos.edit', $product->id) }}">
+                <a href="{{ route('productos.edit', $Producto->id) }}">
                     <button type="button" class="btn btn-warning"><i class="fa fa-pencil-square fa-2x" aria-hidden="true"></i> Editar</button>
                 </a>
-                <a href="{{ route('productos.destroy', $product->id) }}">
+                <a href="{{ route('productos.destroy', $Producto->id) }}">
                     <button type="button" class="btn btn-danger"><i class="fa fa-trash fa-2x" aria-hidden="true"></i> Eliminar</button>
                 </a>                
             </div>
         </div>
         <div class="col-md-6">
-            <div class="product">
-                <div class="product-img">
-                    <img src="{{ asset($product->image) }}" class=" push-right" alt="{{ $product->nombre }}" width="304" height="236"> 
-                    <div class="product-label">
+            <div class="producto">
+                <div class="producto-img">
+                    <img src="{{ asset($Producto->image) }}" class=" push-right" alt="{{ $Producto->nombre }}" width="304" height="236"> 
+                    <div class="producto-label">
                         <span class="new">
                             <strong>Categoria: </strong> 
-                            {{ $product->categoria->nombre}}
+                            {{ $Producto->categoria->nombre}}
                         </span>
                     </div>
                 </div>
                 <br>
-                <div class="product-body">
-                    <p><strong>Nombre:</strong>      {{ $product->nombre }}      </p>
+                <div class="producto-body">
+                    <p><strong>Nombre:</strong>      {{ $Producto->nombre }}      </p>
                     <p><strong>precio:</strong>      {{ $precio }}               </p>
-                    <p><strong>stock:</strong>       {{ $product->stock }} pz    </p>
-                    <p><strong>promedio:</strong>    {{ $product->promedio }}    </p>
-                    <p><strong>Descripción:</strong> {{ $product->description }} </p>
+                    <p><strong>stock:</strong>       {{ $Producto->stock }} pz    </p>
+                    <p><strong>promedio:</strong>    {{ $Producto->promedio }}    </p>
+                    <p><strong>Descripción:</strong> {{ $Producto->description }} </p>
                 </div>
             </div>
         </div>

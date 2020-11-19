@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}"  ng-app="myApp"  ng-controller="categoriesCtrl">
+<html lang="{{ app()->getLocale() }}" >
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Edutroniks') }}</title>
 		
 		@yield('stylesheets') <!-- Child will insert custom childsheets as required -->
 		<!-- Google font -->
@@ -45,19 +45,24 @@
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+						<li><a href="#"><i class="fa fa-phone"></i> +52-771-746-1128</a></li>
+						<li><a href="#"><i class="fa fa-envelope-o"></i> edutroniks@email.com</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> San Antonio, 8, Carboneras, Pachuca, Hgo</a></li>
 					</ul>
 					<ul class="header-links pull-right">
 						@if (Route::has('login'))
 							@auth
 								<li>
-									<a href="{{ url('/home') }}">
+									<a href="{{ route('home') }}">
 										<i class="fa fa-user-o"></i> 
 										Home
 									</a>
 								</li>
+								@can('productos.index')
+								<li class="{{ setActive('productos.index') }}">
+									<a class="nav-link" href="{{ route('productos.index') }}">Admin Productos</a>
+								</li>
+								@endcan
 							@else
 								<li>
 									<a href="{{ route('login') }}">
@@ -129,7 +134,7 @@
 													<img src="{{ asset('img/product01.png') }}" alt="">
 												</div>
 												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name goes here</a></h3>
+													<h3 class="product-name"><a href="#">Nombre del producto</a></h3>
 													<h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
 												</div>
 												<button class="delete"><i class="fa fa-close"></i></button>
@@ -140,7 +145,7 @@
 													<img src="{{ asset('img/product02.png') }}" alt="">
 												</div>
 												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name goes here</a></h3>
+													<h3 class="product-name"><a href="#">Nombre del producto</a></h3>
 													<h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
 												</div>
 												<button class="delete"><i class="fa fa-close"></i></button>
@@ -186,7 +191,7 @@
 				<div id="responsive-nav">
                     <!-- NAV -->                     
 					<ul class="main-nav nav navbar-nav">
-                        <li class="{{ setActive('home') }}"><a href="{{ route('home')}}">Home</a></li>
+                        <li class="{{ setActive('home') }}"><a href="{{ route('home')}}">Inicio</a></li>
                         @can('productos.index')
                         <li class="{{ setActive('productos.index') }}">
                             <a class="nav-link" href="{{ route('productos.index') }}">Admin Productos</a>
@@ -203,7 +208,7 @@
                         </li>
                         @endcan
 						<li><a href="#">Ofertas</a></li>
-						<li><a href="#">Productos</a></li>
+						<li><a href="{{ route('productos.indexClients') }}">Productos</a></li>
 						<li><a href="#">Categorias</a></li>
 						<li><a href="#">Carrito</a></li>
 						{{--<li><a href="#">Cameras</a></li>
@@ -224,6 +229,11 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
+								@can('productos.index')
+									<li class="{{ setActive('productos.index') }}">
+										<a class="nav-link" href="{{ route('productos.index') }}">Admin Productos</a>
+									</li>
+								@endcan
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -271,7 +281,7 @@
 					<div class="row">
 						<div class="col-md-3 col-xs-6">
 							<div class="footer">
-								<h3 class="footer-title">About Us</h3>
+								<h3 class="footer-title">Nosotros</h3>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
 								<ul class="footer-links">
 									<li><a href="#"><i class="fa fa-map-marker"></i>San Antonio, 8, Carboneras, Pachuca, Hgo</a></li>

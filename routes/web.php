@@ -55,29 +55,33 @@ Route::middleware(['auth'])->group(function () {
 	Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit')
 		->middleware('permission:users.edit');
 	//productos
-	Route::post('productos/store', 'ProductController@store')->name('productos.store')
+	Route::post('productos/store', 'ProductoController@store')->name('productos.store')
 		->middleware('permission:productos.create');
 
-	Route::get('productos', 'ProductController@index')->name('productos.index')
+	Route::get('productos', 'ProductoController@index')->name('productos.index')
 		->middleware('permission:productos.index');
 
-	Route::get('productos/create', 'ProductController@create')->name('productos.create')
+	Route::get('productos/create', 'ProductoController@create')->name('productos.create')
 		->middleware('permission:productos.create');
 
-	Route::put('productos/{product}', 'ProductController@update')->name('productos.update')
+	Route::put('productos/{product}', 'ProductoController@update')->name('productos.update')
 		->middleware('permission:productos.edit');
 
-	Route::get('productos/{product}', 'ProductController@show')->name('productos.show')
+	Route::get('productos/{product}', 'ProductoController@show')->name('productos.show')
 		->middleware('permission:productos.show');
 
-	Route::delete('productos/{product}', 'ProductController@destroy')->name('productos.destroy')
+	Route::delete('productos/{product}', 'ProductoController@destroy')->name('productos.destroy')
 		->middleware('permission:productos.destroy');
 
-	Route::get('productos/{product}/edit', 'ProductController@edit')->name('productos.edit')
+	Route::get('productos/{product}/edit', 'ProductoController@edit')->name('productos.edit')
 		->middleware('permission:productos.edit');
-	
 
+	
 });
+Route::get('products', 'ProductoController@indexClients')->name('productos.indexClients');
+
+Route::get('productosByCategoria/{categoria}', 'ProductoController@indexClientsByCategory')
+		->name('productos.indexClientsByCategory');
 
 Route::get('getCategoriasByAngular', 'CategoriaController@getCategoriasByAngular')
 ->name('categoria.getCategoriasByAngular');

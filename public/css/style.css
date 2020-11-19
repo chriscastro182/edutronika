@@ -446,7 +446,7 @@ textarea.input {
 #header {
   padding-top: 15px;
   padding-bottom: 15px;
-  background-color: rgb(0, 33, 86);
+  background-color: rgb(14, 0, 130);
 }
 
 .header-logo {
@@ -789,7 +789,7 @@ textarea.input {
   padding: 60px 0px;
   margin: 30px 0px;
   background-color: #E4E7ED;
-  background-image: url('../img/Banner2-Edu.png');
+  background-image: url('../img/Banner1.jpg');
   background-position: center;
   background-repeat: no-repeat;
 }

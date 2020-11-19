@@ -10,7 +10,7 @@
                 <div class="panel-body">      
                     <ul>
                         @forelse ($categorias as $categoria)
-                            <li class="nav-link"><a href="{{ route('productos.indexClientsByCategory', $categoria->id) }}"">{{ $categoria->nombre }} </a></li>    
+                            <li class="nav-link"><a href="{{ route('productos.indexClientsByCategory', $categoria->id) }}"">{{ $categoria->nombre }} </a></li>
                             <hr>
                         @empty
                             <li>No existen categorías</li>                                
@@ -59,7 +59,6 @@
                     
                 </div>
 
-                {{ $productos->links() }}
             </div>
         </div>
     </div>

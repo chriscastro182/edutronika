@@ -1,15 +1,15 @@
 {{-- Hidden Ids & attributes for complete model binding --}}
-<input type="hidden" value="{{ $product->id }}" name="id">
-<input type="hidden" value="{{ $product->vendidos }}" name="vendidos">
-<input type="hidden" id="imageHidden" value="{{ $product->image }}" name="image">
+<input type="hidden" value="{{ $Producto->id }}" name="id">
+<input type="hidden" value="{{ $Producto->vendidos }}" name="vendidos">
+<input type="hidden" id="imageHidden" value="{{ $Producto->image }}" name="image">
 {{-- Inputs filled by user --}}
 <div class="product-img">
-	@if ($product->image)
+	@if ($Producto->image)
 	<button id="deleteImg">
 		x
 	</button>
-		<img id="imageShowed" src="{{ asset($product->image) }}" alt="{{ $product->nombre }}" width="304" height="236">
-		<img id="noImageShowed" hidden src="{{ asset('img/carga.png') }}" alt="{{ $product->nombre }}" width="304" height="236">
+		<img id="imageShowed" src="{{ asset($Producto->image) }}" alt="{{ $Producto->nombre }}" width="304" height="236">
+		<img id="noImageShowed" hidden src="{{ asset('img/carga.png') }}" alt="{{ $Producto->nombre }}" width="304" height="236">
 		<div id="newImage" name="image" hidden>
 			{{ Form::label('image', 'Imagen') }}
 			{{ Form::file('image', null, ['class' => 'form-control']) }}
@@ -24,7 +24,7 @@
 		<span for="categoria_id" class="new push-right">Categoria: </span>
 		<select name="categoria_id" id="" class="form-control form-control-lg">
 			@forelse ($categorias as $categoria)
-				@if ($product->categoria->id == $categoria->id)
+				@if ($Producto->categoria->id == $categoria->id)
 					<option value="{{ $categoria->id }}" selected>{{ $categoria->nombre }}</option>
 				@else
 					<option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
@@ -59,7 +59,7 @@
 			{{ Form::label('nuevo', '¿En la sección de nuevos?') }}	
 		</div>
 		<div class="col-md-6">
-			@if ($product->nuevo)
+			@if ($Producto->nuevo)
 				<br>
 				{{ Form::radio('nuevo', '0', false, ['class' => 'form-control', 'id' => 'nuevoNo']) }}
 				{{ Form::label('nuevo', 'no') }}
