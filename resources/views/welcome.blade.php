@@ -486,7 +486,7 @@
             <div class="row">
                 <div class="col-md-4 col-xs-6">
                     <div class="section-title">
-                        <h4 class="title">Top selling</h4>
+                        <h4 class="title">Top ventas</h4>
                         <div class="section-nav">
                             <div id="slick-nav-3" class="products-slick-nav"></div>
                         </div>
@@ -500,7 +500,7 @@
                                     <img src="./img/product07.png" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">Category</p>
+                                    <p class="product-category">Categoria</p>
                                     <h3 class="product-name"><a href="#">product name goes here</a></h3>
                                     <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
                                 </div>
@@ -780,7 +780,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="newsletter">
-                        <p>Sign Up for the <strong>NEWSLETTER</strong></p>
+                        <p>Sugerencias <strong>Correo</strong></p>
                         <form>
                             <input class="input" type="email" placeholder="Enter Your Email">
                             <button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
